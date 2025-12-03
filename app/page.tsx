@@ -1,25 +1,8 @@
-import Image from "next/image";
+"use client";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-zinc-800">
-      {/* Navigation / Header */}
-      <header className="fixed top-0 w-full z-50 border-b border-white/10 bg-black/50 backdrop-blur-xl">
-        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-          <span className="font-bold text-xl tracking-tighter">JSW</span>
-          <nav className="hidden md:flex gap-6 text-sm font-medium text-zinc-400">
-            <a href="#about" className="hover:text-white transition-colors">About</a>
-            <a href="#work" className="hover:text-white transition-colors">Work</a>
-            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
-          </nav>
-          <a
-            href="mailto:hello@svnty.com"
-            className="px-4 py-2 bg-white text-black text-sm font-semibold rounded-full hover:bg-zinc-200 transition-colors"
-          >
-            Get in touch
-          </a>
-        </div>
-      </header>
+    <>
 
       <main className="flex flex-col items-center justify-center pt-32 pb-20 px-6">
         {/* Hero Section */}
@@ -29,7 +12,7 @@ export default function Home() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
             </span>
-            Available for new projects
+            Available for project discussion
           </div>
 
           <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-zinc-500">
@@ -42,25 +25,25 @@ export default function Home() {
             </h2>
             <p className="text-lg text-zinc-500 max-w-2xl leading-relaxed">
               Merging biological systems with engineering principles.
-              Also known as <span className="text-white font-semibold">@svnty</span>.
+              Also known as <span className="text-white font-semibold">svnty</span>.
               Building the future of biotech and digital experiences.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center sm:justify-start">
             <a
-              href="#contact"
+              href="/work"
               className="px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-zinc-200 transition-all active:scale-95 text-center"
             >
               View Portfolio
             </a>
             <a
-              href="https://twitter.com/svnty"
+              href="https://x.com/svnty_dev"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 bg-zinc-900 text-white font-semibold rounded-full border border-zinc-800 hover:bg-zinc-800 transition-all active:scale-95 text-center"
             >
-              Follow @svnty
+              Follow @svnty_dev on 𝕏
             </a>
           </div>
         </section>
@@ -75,24 +58,14 @@ export default function Home() {
                 Specializing in synthetic biology and software engineering.
                 I design and optimize sustainable solutions for engineering and biological systems.
               </p>
-              {/* <div className="mt-8 h-32 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl border border-white/5 group-hover:border-white/10 transition-colors"></div> */}
             </div>
-
-            {/* Card 2
-            <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
-              <h3 className="text-xl font-semibold mb-4 text-zinc-100">Digital</h3>
-              <p className="text-zinc-400 leading-relaxed">
-                Creating digital footprints and advertising campaigns that leave a mark.
-              </p>
-            </div> */}
 
             {/* Card 3 */}
             <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5 hover:border-white/10 transition-colors">
               <h3 className="text-xl font-semibold mb-4 text-zinc-100">Connect</h3>
               <ul className="space-y-2 text-zinc-400">
-                <li><a href="#" className="hover:text-white transition-colors">Twitter / X</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">GitHub</a></li>
+                <li><a target="_blank" href="https://linkedin.com/in/svnty" className="hover:text-white transition-colors">LinkedIn</a></li>
+                <li><a target="_blank" href="https://github.com/svnty" className="hover:text-white transition-colors">GitHub</a></li>
               </ul>
             </div>
 
@@ -102,27 +75,16 @@ export default function Home() {
                 <h3 className="text-xl font-semibold mb-2 text-zinc-100">Let's work together</h3>
                 <p className="text-zinc-400">Open for consulting and collaborations.</p>
               </div>
-              <a href="mailto:hello@svnty.com" className="h-12 w-12 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform">
+              <span onClick={() => document.getElementById("contact")?.click()} className="cursor-pointer h-12 w-12 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-black">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
                 </svg>
-              </a>
+              </span>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="w-full border-t border-white/10 bg-black py-10">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-zinc-500 text-sm">
-            © {new Date().getFullYear()} Jake Spencer Walklate. All rights reserved.
-          </p>
-          <div className="flex gap-6 text-zinc-500">
-            <a href="#" className="hover:text-white transition-colors text-sm">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors text-sm">Terms</a>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
